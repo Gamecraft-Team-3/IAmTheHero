@@ -100,4 +100,20 @@ public class EnemySpawner : MonoBehaviour
             isFinalWave = true;
         }
     }
+
+    //Returns true is it is the final wave
+    public bool GetWinConditionA()
+    {
+        return isFinalWave;
+    }
+
+    public bool GetWinConditionB()
+    {
+        if(badGuys.Count != 0)
+        {
+            return false;
+        }
+
+        return true;
+    }
 }

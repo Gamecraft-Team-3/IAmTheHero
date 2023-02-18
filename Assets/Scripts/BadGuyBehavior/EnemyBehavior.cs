@@ -6,6 +6,7 @@ public class EnemyBehavior : MonoBehaviour
 {
     private Vector3 goal;
     private EnemySpawner enemySpawner;
+    private EndGameConditioner endGame;
     private float distanceX;
     private float distanceY;
     [SerializeField] private float speed = 3;
@@ -15,6 +16,8 @@ public class EnemyBehavior : MonoBehaviour
     {
         //Initialize Enemy Spawner
         enemySpawner = GameObject.Find("Enemy Manager").GetComponent<EnemySpawner>();
+        //Initialize End Game Object
+        endGame = GameObject.Find("Game Manager").GetComponent<EndGameConditioner>();
         //Initialize their individual goal
         goal = GameObject.Find("Goal").transform.position;
         goal.z += 1;
@@ -44,7 +47,7 @@ public class EnemyBehavior : MonoBehaviour
     private void ReachGoal()
     {
         enemySpawner.RemoveBadGuy(this.gameObject);
-        //Cause damage to the "Player"
+        endGame.HurtPlayer();
     }
 
     private void BadGuyDies()
