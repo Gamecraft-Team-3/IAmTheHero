@@ -147,19 +147,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 290974108}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10, y: 0, z: 0}
+  m_LocalPosition: {x: -12, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!20 &387083431 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 8004678597568816189, guid: 1cd2e6a7fbdc9af479838747c7701bab,
-    type: 3}
-  m_PrefabInstance: {fileID: 563547172}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &563547172
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -167,6 +161,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7627073289855897368, guid: 1cd2e6a7fbdc9af479838747c7701bab,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8004678598317351512, guid: 1cd2e6a7fbdc9af479838747c7701bab,
         type: 3}
       propertyPath: m_RootOrder
@@ -236,7 +235,7 @@ PrefabInstance:
         type: 3}
       propertyPath: mainCamera
       value: 
-      objectReference: {fileID: 387083431}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1cd2e6a7fbdc9af479838747c7701bab, type: 3}
 --- !u!1 &898870936
@@ -250,7 +249,7 @@ GameObject:
   - component: {fileID: 898870938}
   - component: {fileID: 898870937}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: Game Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -409,7 +408,7 @@ GameObject:
   - component: {fileID: 1876160498}
   - component: {fileID: 1876160497}
   m_Layer: 0
-  m_Name: EnemyManager
+  m_Name: Enemy Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
