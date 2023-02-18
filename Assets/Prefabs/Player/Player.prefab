@@ -1,5 +1,54 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2720652902181150971
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 426916804648780922}
+  - component: {fileID: 4705857715024909058}
+  m_Layer: 0
+  m_Name: PostProcessing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &426916804648780922
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2720652902181150971}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7627073289855897368}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4705857715024909058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2720652902181150971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: e0c9c5f59d2696343b7887eca9b9d093, type: 2}
 --- !u!1 &7627073288885350525
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,6 +654,7 @@ Transform:
   - {fileID: 7627073288972880252}
   - {fileID: 7627073289305236175}
   - {fileID: 7627073288885350524}
+  - {fileID: 426916804648780922}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -726,12 +776,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   knightCooldown: 1
-  mageCooldown: 1
-  rangerCooldown: 1
+  mageCooldown: 2
+  rangerCooldown: 0.5
+  cooldownTimer: 0
   mageAttackPrefab: {fileID: 4477609330986012301, guid: 171f2c5480c3e974e9831ac0b57476ea,
     type: 3}
   implode: {fileID: 4202251159204910133, guid: b29346d113ed5e04ea81378eed118a74, type: 3}
   explode: {fileID: 6223743729162688715, guid: 6a15a31debad98843b58ca45dd43321f, type: 3}
+  arrowPrefab: {fileID: 2111983762047769699, guid: b9a7aa8cd1d7c114fbbd0f467fd4dd96,
+    type: 3}
+  swordPrefab: {fileID: 2902599111243679034, guid: d3426fbad9a566d46afe8e89b3b0940a,
+    type: 3}
+  swingPosition: {x: 0, y: 0, z: 0}
+  swingRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &7627073290091334112
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,6 +938,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   playerTransform: {fileID: 7627073289855897368}
+  playerCombat: {fileID: 0}
 --- !u!1 &7627073290359018071
 GameObject:
   m_ObjectHideFlags: 0

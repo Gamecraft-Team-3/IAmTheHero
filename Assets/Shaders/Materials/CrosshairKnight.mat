@@ -58,9 +58,9 @@ Material:
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - _BaseColor: {r: 0.0010679982, g: 0.2264151, b: 0.18011092, a: 0}
-    - _ColorGrad1: {r: 0.082280174, g: 0.3994415, b: 0.4056604, a: 0}
-    - _ColorGrad2: {r: 0.08067818, g: 0.3029422, b: 0.46226418, a: 0}
+    - _BaseColor: {r: 0.46226418, g: 0.41493595, b: 0.128649, a: 0}
+    - _ColorGrad1: {r: 0.40392157, g: 0.30603456, b: 0.08235293, a: 0}
+    - _ColorGrad2: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &169985420594805539
 MonoBehaviour:
