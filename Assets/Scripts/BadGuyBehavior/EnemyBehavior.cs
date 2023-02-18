@@ -26,7 +26,6 @@ public class EnemyBehavior : MonoBehaviour
         //SPEED
         speed *= Random.Range(0.9f, 1.2f);
 
-        DamageEnemy(0);
     }
 
     // Update is called once per frame
