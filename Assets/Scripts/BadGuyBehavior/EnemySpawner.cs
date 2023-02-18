@@ -65,7 +65,7 @@ public class EnemySpawner : MonoBehaviour
     {
         GameObject instance = Instantiate(bossPrefab);
         instance.transform.position = GetRandomPosition();
-        badGuys.Add(bossPrefab);
+        badGuys.Add(instance);
     }
 
     //Removes a bad guy from the list and destroys it
@@ -78,7 +78,7 @@ public class EnemySpawner : MonoBehaviour
     //Returns a random Vector3 for a position
     private Vector3 GetRandomPosition()
     {
-        float xPos = Random.Range(-5, 5);
+        float xPos = Random.Range(10, 12);
         float yPos = 0.6f;
         float zPos = Random.Range(-5, 5);
 
