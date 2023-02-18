@@ -26,26 +26,17 @@ public class RangerCrosshair : MonoBehaviour
             midPoint.y = 1.0f;
             
             transform.position = Vector3.Lerp(transform.position, midPoint, cursorSpeed * Time.deltaTime);
-            
-            Vector3 direction = (playerTransform.position - mousePos).normalized;
-            
-            var angle = Mathf.Atan2(direction.z, direction.x) * Mathf.Rad2Deg; 
-            var offset = -90f;
 
-            //transform.rotation = Quaternion.Euler(new Vector3(0.0f, angle + offset, 0.0f));
-            
             transform.LookAt(new Vector3(mousePos.x, 1.0f, mousePos.z));
             
             float scaleXY = Vector3.Distance(playerTransform.position, mousePos) / 10.0f;
-            scaleXY = Mathf.Clamp(scaleXY, 0.5f, 1.0f);
+            scaleXY = Mathf.Clamp(scaleXY, 0.5f, 0.75f);
                 
             float scaleZ = Vector3.Distance(playerTransform.position, mousePos) / 10.0f;
 
-            scaleZ = Mathf.Clamp(scaleZ, 0.2f, 2.0f);
-            
+            scaleZ = Mathf.Clamp(scaleZ, 0.2f, 1.35f);
             
             transform.localScale = new Vector3(scaleXY, scaleXY, scaleZ);
-            
         }
     }
 }

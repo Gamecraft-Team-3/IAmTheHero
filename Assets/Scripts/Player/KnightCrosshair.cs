@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using Input;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ public class KnightCrosshair : MonoBehaviour
     [SerializeField] private float cursorSpeed;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private Transform playerTransform;
+    [SerializeField] private PlayerCombat playerCombat;   
 
     void Update()
     {
@@ -37,6 +39,9 @@ public class KnightCrosshair : MonoBehaviour
             //transform.rotation = Quaternion.Euler(new Vector3(0.0f, angle + offset, 0.0f));
             
             transform.LookAt(new Vector3(mousePos.x, 1.0f, mousePos.z));
+
+            playerCombat.swingPosition = transform.position;
+            playerCombat.swingRotation = transform.rotation;
         }
     }
 }

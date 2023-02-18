@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using Input;
+using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace DefaultNamespace
@@ -13,14 +15,28 @@ namespace DefaultNamespace
         [SerializeField] private LayerMask groundMask;
 
         [SerializeField] private float knightCooldown, mageCooldown, rangerCooldown;
+        [SerializeField] private float cooldownTimer = 0.0f;
 
         [Header("Mage Attack Objects")] 
         [SerializeField] private GameObject mageAttackPrefab;
         [SerializeField] private GameObject implode, explode;
+
+        [Header("Ranger")] 
+        [SerializeField] private GameObject arrowPrefab;
+
+        [Header("Knight")] 
+        [SerializeField] private GameObject swordPrefab;
+        public Vector3 swingPosition;
+        public Quaternion swingRotation;
         
         private void Start()
         {
             playerInput.OnAttackAction += Attack;
+        }
+
+        private void Update()
+        {
+            cooldownTimer += Time.deltaTime;
         }
 
         private void Attack(object sender, EventArgs e)
@@ -37,14 +53,25 @@ namespace DefaultNamespace
 
         private void KnightAttack()
         {
+            if (cooldownTimer < knightCooldown)
+                return;
             
+            GameObject swordInstance = Instantiate(swordPrefab, swingPosition, swingRotation);
+            swordInstance.transform.parent = transform;
+
+            cooldownTimer = 0.0f;
         }
 
         private IEnumerator MageAttack()
         {
+            if (cooldownTimer < mageCooldown)
+                yield break;
+            
             Vector3 position = GetMouseRay();
             Instantiate(mageAttackPrefab, position, Quaternion.identity);
             Instantiate(implode, position, Quaternion.identity);
+            
+            cooldownTimer = 0.0f;
             
             yield return new WaitForSeconds(1.75f);
 
@@ -54,7 +81,14 @@ namespace DefaultNamespace
 
         private void RangerAttack()
         {
+            if (cooldownTimer < rangerCooldown)
+                return;
             
+            GameObject arrow = Instantiate(arrowPrefab, new Vector3(transform.position.x, 2.0f, transform.position.z), Quaternion.identity);
+            
+            arrow.transform.LookAt(new Vector3(GetMouseRay().x, 2.0f, GetMouseRay().z));
+            
+            cooldownTimer = 0.0f;
         }
 
         private Vector3 GetMouseRay()
