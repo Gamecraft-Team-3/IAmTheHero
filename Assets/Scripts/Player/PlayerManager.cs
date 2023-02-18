@@ -15,8 +15,8 @@ public class PlayerManager : MonoBehaviour
 
     [SerializeField] private GameObject mCross, rCross, kCross;
     [SerializeField] private GameObject crosshairs;
-    
-    private enum HeroType
+
+    public enum HeroType
     {
         Knight,
         Mage,
@@ -110,5 +110,10 @@ public class PlayerManager : MonoBehaviour
         ranger.transform.localRotation = Quaternion.Euler(Vector3.zero);
         
         playerInput.SetInputState(true);
+    }
+
+    public HeroType GetHeroType()
+    {
+        return heroType;
     }
 }
