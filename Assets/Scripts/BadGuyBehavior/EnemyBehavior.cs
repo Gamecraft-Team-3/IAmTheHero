@@ -9,6 +9,7 @@ public class EnemyBehavior : MonoBehaviour
     private EndGameConditioner endGame;
     private float distanceX;
     private float distanceY;
+    [SerializeField] private ParticleSystem bloodSpalter;
     [SerializeField] private float speed = 3;
     [SerializeField] private int health = 3;
     // Start is called before the first frame update
@@ -24,6 +25,8 @@ public class EnemyBehavior : MonoBehaviour
         goal.z *= Random.Range(-5, 5);
         //SPEED
         speed *= Random.Range(0.9f, 1.2f);
+
+        DamageEnemy(0);
     }
 
     // Update is called once per frame
@@ -50,12 +53,17 @@ public class EnemyBehavior : MonoBehaviour
     public void DamageEnemy(int damage)
     {
         health -= damage;
+        DamageEffect();
         if(health <= 0)
         {
             BadGuyDies();
         }
     }
 
+    private void DamageEffect()
+    {
+        bloodSpalter.Play();
+    }
     //This function will remove the this enemy and hurt the player
     private void ReachGoal()
     {
