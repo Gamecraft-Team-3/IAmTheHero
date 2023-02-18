@@ -75,7 +75,7 @@ public class EnemySpawner : MonoBehaviour
     private Vector3 GetRandomPosition()
     {
         float xPos = Random.Range(-5, 5);
-        float yPos = 0.0f;
+        float yPos = 1.0f;
         float zPos = Random.Range(-5, 5);
 
         return new Vector3(xPos, yPos, zPos);
@@ -115,5 +115,10 @@ public class EnemySpawner : MonoBehaviour
         }
 
         return true;
+    }
+
+    public List<GameObject> GetBadGuys()
+    {
+        return badGuys;
     }
 }
