@@ -422,7 +422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   badGuys: []
-  badGuyPrefab: {fileID: 8394582432428300672, guid: 5f25ba22f8010cc4091f971baff26098,
+  badGuyPrefab: {fileID: 8888570495023845904, guid: 5f25ba22f8010cc4091f971baff26098,
     type: 3}
 --- !u!4 &1273551919
 Transform:
