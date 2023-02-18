@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class EndGameConditioner : MonoBehaviour
 {
-    private int playerHealth = 5;
+    private int playerHealth = 500;
     private EnemySpawner enemySpawner;
     // Start is called before the first frame update
     void Start()
@@ -16,7 +16,7 @@ public class EndGameConditioner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(enemySpawner.GetWinConditionA() && enemySpawner.GetWinConditionB())
+        if(enemySpawner.GetWinConditionA() && enemySpawner.GetWinConditionB() && enemySpawner.GetWinConditionC())
         {
             WinGame();
         }

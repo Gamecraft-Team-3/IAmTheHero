@@ -6,10 +6,12 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private List<GameObject> badGuys = new List<GameObject>();
     [SerializeField] private GameObject badGuyPrefab;
+    [SerializeField] private GameObject bossPrefab;
 
     private int waveCount = 0;
     private int enemyCount = 0;
     private bool isFinalWave = false;
+    private bool isDoneWithGame = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -61,7 +63,9 @@ public class EnemySpawner : MonoBehaviour
     //Summons the big bad guy
     private void SummonBoss()
     {
-        Debug.Log("Hey Stinky");
+        GameObject instance = Instantiate(bossPrefab);
+        instance.transform.position = GetRandomPosition();
+        badGuys.Add(bossPrefab);
     }
 
     //Removes a bad guy from the list and destroys it
@@ -115,6 +119,16 @@ public class EnemySpawner : MonoBehaviour
         }
 
         return true;
+    }
+
+    public bool GetWinConditionC()
+    {
+        return isDoneWithGame;
+    }
+
+    public void MakeGameDone()
+    {
+        isDoneWithGame = true;
     }
 
     public List<GameObject> GetBadGuys()
