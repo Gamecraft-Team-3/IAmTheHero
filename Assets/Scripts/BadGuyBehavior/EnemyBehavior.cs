@@ -29,27 +29,41 @@ public class EnemyBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Update distance variables always
         distanceX = Mathf.Abs(this.transform.position.x - goal.x);
         distanceY = Mathf.Abs(this.transform.position.y - goal.y);
 
+        //Always look at and move towards goal
         transform.LookAt(goal);
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
+
+        //If too close to goal, call the ReachGoal function
         if(distanceX <= 1.0f && distanceY <= 1.0f)
         {
             ReachGoal();
         }
+
+    }
+
+    //This function will lower the health of this enemy.
+    //If the health reaches zero, remove it.
+    public void DamageEnemy(int damage)
+    {
+        health -= damage;
         if(health <= 0)
         {
             BadGuyDies();
         }
     }
 
+    //This function will remove the this enemy and hurt the player
     private void ReachGoal()
     {
         enemySpawner.RemoveBadGuy(this.gameObject);
         endGame.HurtPlayer();
     }
 
+    //This function will remove this enemy when called
     private void BadGuyDies()
     {
         enemySpawner.RemoveBadGuy(this.gameObject);
