@@ -12,6 +12,9 @@ public class EnemyBehavior : MonoBehaviour
     [SerializeField] private ParticleSystem bloodSpalter;
     [SerializeField] private float speed = 3;
     [SerializeField] private int health = 3;
+
+    private AudioSource winScream;
+    private AudioSource dieScream;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +29,9 @@ public class EnemyBehavior : MonoBehaviour
         //SPEED
         speed *= Random.Range(0.9f, 1.2f);
 
+        //Initialize Audio Sources
+        winScream = GameObject.Find("EnemyWinScream").GetComponent<AudioSource>();
+        dieScream = GameObject.Find("EnemyDieScream").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -61,11 +67,13 @@ public class EnemyBehavior : MonoBehaviour
 
     private void DamageEffect()
     {
+        dieScream.Play();
         bloodSpalter.Play();
     }
     //This function will remove the this enemy and hurt the player
     private void ReachGoal()
     {
+        winScream.Play();
         enemySpawner.RemoveBadGuy(this.gameObject);
         endGame.HurtPlayer();
     }
