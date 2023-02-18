@@ -7,17 +7,24 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HeroColor
-  m_Shader: {fileID: -6465566751694194690, guid: 51d51e9080a6f2b41af0aec2b9d55d66,
+  m_Name: CrosshairRanger
+  m_Shader: {fileID: -6465566751694194690, guid: 80f0d3cd860b5904dab71cd357a1291b,
     type: 3}
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _ALPHATEST_ON
+  - _RECEIVE_SHADOWS_OFF
+  - _SPECULAR_SETUP
+  - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
+  stringTagMap:
+    RenderType: Transparent
+  disabledShaderPasses:
+  - DepthOnly
+  - SHADOWCASTER
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -35,12 +42,27 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Alpha: 1
+    - _AlphaClip: 1
+    - _Blend: 2
+    - _CastShadows: 0
+    - _Cull: 0
+    - _DstBlend: 1
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _ReceiveShadows: 0
+    - _SrcBlend: 5
+    - _Surface: 1
+    - _WorkflowMode: 0
+    - _ZTest: 4
+    - _ZWrite: 0
+    - _ZWriteControl: 0
     m_Colors:
-    - _Color: {r: 0.8924439, g: 0.990566, b: 0.9625312, a: 0}
+    - _BaseColor: {r: 0.023164572, g: 0.5849056, b: 0, a: 0}
+    - _ColorGrad1: {r: 0.010679956, g: 0.4528302, b: 0.04157257, a: 0}
+    - _ColorGrad2: {r: 0.38521993, g: 0.4811321, b: 0.024964403, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &8754220448650131211
+--- !u!114 &169985420594805539
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
