@@ -49,7 +49,7 @@ MonoBehaviour:
   eList: []
   damage: 25
   swingSpeed: -900
-  swingRadius: 3
+  swingRadius: 4
   swingTime: 0.285
 --- !u!1001 &4618914359257970610
 PrefabInstance:

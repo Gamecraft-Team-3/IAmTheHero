@@ -5,24 +5,31 @@ using UnityEngine;
 
 public class MageAttack : MonoBehaviour
 {
-    public Vector3 position;
     [SerializeField] private float innerRadius, outerRadius;
 
     [SerializeField] private int directDamage, aoeDamage;
+
+    [SerializeField] private List<EnemyBehavior> eList;
     
     private void Start()
     {
         EnemySpawner enemySpawner = FindObjectOfType<EnemySpawner>();
-
+        
         if (enemySpawner == null)
             return;
+
+        GameObject[] eListTemp = new GameObject[enemySpawner.GetBadGuys().Count];
+        enemySpawner.GetBadGuys().CopyTo(eListTemp);
+
+        foreach (var obj in eListTemp) 
+            eList.Add(obj.GetComponent<EnemyBehavior>());
         
-        foreach (var bg in enemySpawner.GetBadGuys())
+        foreach (var enemy in eList.ToArray())
         {
-            if (Vector3.Distance(position, bg.transform.position) <= innerRadius)
-                bg.GetComponent<EnemyBehavior>().DamageEnemy(directDamage);
-            else if (Vector3.Distance(position, bg.transform.position) <= outerRadius)
-                bg.GetComponent<EnemyBehavior>().DamageEnemy(aoeDamage);
+            if (Vector3.Distance(transform.position, enemy.transform.position) <= innerRadius)
+                enemy.DamageEnemy(directDamage);
+            else if (Vector3.Distance(transform.position, enemy.transform.position) <= outerRadius)
+                enemy.DamageEnemy(aoeDamage);
         }
     }
 }

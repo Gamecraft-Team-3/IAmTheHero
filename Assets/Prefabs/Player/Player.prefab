@@ -779,7 +779,7 @@ MonoBehaviour:
   mageCooldown: 2
   rangerCooldown: 0.5
   cooldownTimer: 0
-  mageAttackPrefab: {fileID: 4477609330986012301, guid: 171f2c5480c3e974e9831ac0b57476ea,
+  mageAttackPrefab: {fileID: 8169415497158257841, guid: 7e6ecbf952be04d47bf482fc95675bd5,
     type: 3}
   implode: {fileID: 4202251159204910133, guid: b29346d113ed5e04ea81378eed118a74, type: 3}
   explode: {fileID: 6223743729162688715, guid: 6a15a31debad98843b58ca45dd43321f, type: 3}
