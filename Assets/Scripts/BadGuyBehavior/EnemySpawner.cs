@@ -75,7 +75,7 @@ public class EnemySpawner : MonoBehaviour
     private Vector3 GetRandomPosition()
     {
         float xPos = Random.Range(-5, 5);
-        float yPos = 1.0f;
+        float yPos = 0.6f;
         float zPos = Random.Range(-5, 5);
 
         return new Vector3(xPos, yPos, zPos);
