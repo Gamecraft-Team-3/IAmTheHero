@@ -6,16 +6,17 @@ namespace DefaultNamespace
 {
     public class PlayerCombat : MonoBehaviour
     {
-        [SerializeField] private PlayerInputManager pim;
+        [SerializeField] private PlayerInputManager playerInput;
+        [SerializeField] private PlayerManager playerManager;
         
         private void Start()
         {
-            pim.OnAttackAction += Attack;
+            playerInput.OnAttackAction += Attack;
         }
 
         private void Attack(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HeroColor
+  m_Name: HeroColorRanger
   m_Shader: {fileID: -6465566751694194690, guid: 51d51e9080a6f2b41af0aec2b9d55d66,
     type: 3}
   m_ValidKeywords: []
@@ -38,7 +38,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _Color: {r: 0.8924439, g: 0.990566, b: 0.9625312, a: 0}
+    - _Color: {r: 0, g: 0.3679245, b: 0.07425168, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &8754220448650131211
 MonoBehaviour:

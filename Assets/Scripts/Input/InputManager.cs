@@ -53,6 +53,15 @@ public partial class @InputManager: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""571e3645-d934-4c1c-9de0-5062f7271bc2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -132,6 +141,17 @@ public partial class @InputManager: IInputActionCollection2, IDisposable
                     ""action"": ""MousePosition"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""626c94f8-f070-4d72-8d30-4a92704464df"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -143,6 +163,7 @@ public partial class @InputManager: IInputActionCollection2, IDisposable
         m_Active_Walk = m_Active.FindAction("Walk", throwIfNotFound: true);
         m_Active_Attack = m_Active.FindAction("Attack", throwIfNotFound: true);
         m_Active_MousePosition = m_Active.FindAction("MousePosition", throwIfNotFound: true);
+        m_Active_Interact = m_Active.FindAction("Interact", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -207,6 +228,7 @@ public partial class @InputManager: IInputActionCollection2, IDisposable
     private readonly InputAction m_Active_Walk;
     private readonly InputAction m_Active_Attack;
     private readonly InputAction m_Active_MousePosition;
+    private readonly InputAction m_Active_Interact;
     public struct ActiveActions
     {
         private @InputManager m_Wrapper;
@@ -214,6 +236,7 @@ public partial class @InputManager: IInputActionCollection2, IDisposable
         public InputAction @Walk => m_Wrapper.m_Active_Walk;
         public InputAction @Attack => m_Wrapper.m_Active_Attack;
         public InputAction @MousePosition => m_Wrapper.m_Active_MousePosition;
+        public InputAction @Interact => m_Wrapper.m_Active_Interact;
         public InputActionMap Get() { return m_Wrapper.m_Active; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -232,6 +255,9 @@ public partial class @InputManager: IInputActionCollection2, IDisposable
             @MousePosition.started += instance.OnMousePosition;
             @MousePosition.performed += instance.OnMousePosition;
             @MousePosition.canceled += instance.OnMousePosition;
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
         }
 
         private void UnregisterCallbacks(IActiveActions instance)
@@ -245,6 +271,9 @@ public partial class @InputManager: IInputActionCollection2, IDisposable
             @MousePosition.started -= instance.OnMousePosition;
             @MousePosition.performed -= instance.OnMousePosition;
             @MousePosition.canceled -= instance.OnMousePosition;
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
         }
 
         public void RemoveCallbacks(IActiveActions instance)
@@ -267,5 +296,6 @@ public partial class @InputManager: IInputActionCollection2, IDisposable
         void OnWalk(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnMousePosition(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
     }
 }
