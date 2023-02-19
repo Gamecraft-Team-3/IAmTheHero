@@ -34,7 +34,6 @@ public class KnightCrosshair : MonoBehaviour
             Vector3 direction = (playerTransform.position - mousePos).normalized;
             
             var angle = Mathf.Atan2(direction.z, direction.x) * Mathf.Rad2Deg; 
-            var offset = -90f;
 
             //transform.rotation = Quaternion.Euler(new Vector3(0.0f, angle + offset, 0.0f));
             

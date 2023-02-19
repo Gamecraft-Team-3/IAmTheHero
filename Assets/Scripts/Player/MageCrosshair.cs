@@ -20,7 +20,7 @@ public class MageCrosshair : MonoBehaviour
         {
             Vector3 mousePos = hitPoint.point;
 
-            transform.position = Vector3.Lerp(transform.position,mousePos + new Vector3(0.0f, 0.1f, 0.0f), cursorSpeed * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position,mousePos + new Vector3(0.0f, 0.325f, 0.0f), cursorSpeed * Time.deltaTime);
         }
         
         transform.Rotate(new Vector3(0.0f, rotationSpeed * Time.deltaTime, 0.0f));

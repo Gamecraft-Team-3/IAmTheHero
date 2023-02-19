@@ -9,11 +9,14 @@ namespace DefaultNamespace
 {
     public class PlayerCombat : MonoBehaviour
     {
+        [Header("Objects")]
         [SerializeField] private PlayerInputManager playerInput;
         [SerializeField] private PlayerManager playerManager;
         [SerializeField] private Camera mainCamera;
         [SerializeField] private LayerMask groundMask;
+        [SerializeField] private CameraController cameraController;
 
+        [Header("Cooldowns")]
         [SerializeField] private float knightCooldown, mageCooldown, rangerCooldown;
         [SerializeField] private float cooldownTimer = 0.0f;
 
@@ -74,6 +77,8 @@ namespace DefaultNamespace
             cooldownTimer = 0.0f;
             
             yield return new WaitForSeconds(1.75f);
+            
+            cameraController.ShakeCamera(1.0f, 32.0f, 0.1f);
 
             Instantiate(explode, position, Quaternion.identity);
         }

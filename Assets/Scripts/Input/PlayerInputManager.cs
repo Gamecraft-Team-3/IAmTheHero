@@ -11,6 +11,8 @@ namespace Input
         public event EventHandler OnAttackAction;
         public event EventHandler OnInteractAction;
 
+        public bool walkEnabled = true;
+
         private void Awake()
         {
             _inputManager = new InputManager();
@@ -18,13 +20,15 @@ namespace Input
 
             _inputManager.Active.Interact.performed += OnInteractPerformed;
             _inputManager.Active.Attack.performed += OnAttackPerformed;
+
+            walkEnabled = true;
         }
 
         public Vector2 GetMovementVector()
         {
             Vector2 input = _inputManager.Active.Walk.ReadValue<Vector2>();
 
-            return input;
+            return !walkEnabled ? Vector2.zero : input;
         }
         
         private void OnAttackPerformed(InputAction.CallbackContext context)
@@ -47,9 +51,9 @@ namespace Input
         public void SetInputState(bool state)
         {
             if (state)
-                _inputManager.Active.Enable();
+                walkEnabled = true;
             else
-                _inputManager.Active.Disable();
+                walkEnabled = false;
         }
     }
 }

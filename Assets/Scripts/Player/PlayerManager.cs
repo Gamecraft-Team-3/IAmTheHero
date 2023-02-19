@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using Input;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -8,6 +9,7 @@ using Random = UnityEngine.Random;
 public class PlayerManager : MonoBehaviour
 {
     [SerializeField] private PlayerInputManager playerInput;
+    [SerializeField] private CameraController cameraController;
 
     [SerializeField] private GameObject knight, mage, ranger;
     [SerializeField] private Transform active, mini1, mini2;
@@ -53,6 +55,8 @@ public class PlayerManager : MonoBehaviour
     {
         delayTimer = 0.0f;
         currentDelay = Random.Range(minDelay, maxDelay);
+        
+        cameraController.ShakeCamera(0.35f, 32.0f, 0.075f);
         
         Invoke(nameof(SwitchCharacter), 0.3f);
         
