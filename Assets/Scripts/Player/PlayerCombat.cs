@@ -62,7 +62,7 @@ namespace DefaultNamespace
             GameObject swordInstance = Instantiate(swordPrefab, swingPosition, swingRotation);
             swordInstance.transform.parent = transform;
 
-            cooldownTimer = 0.0f;
+            cooldownTimer = 0.75f;
         }
 
         private IEnumerator MageAttack()
@@ -74,7 +74,7 @@ namespace DefaultNamespace
             Instantiate(mageAttackPrefab, position, Quaternion.identity);
             Instantiate(implode, position, Quaternion.identity);
             
-            cooldownTimer = 0.0f;
+            cooldownTimer = 1.5f;
             
             yield return new WaitForSeconds(1.75f);
             
