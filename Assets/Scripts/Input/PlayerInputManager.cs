@@ -9,6 +9,7 @@ namespace Input
     {
         private InputManager _inputManager;
         public event EventHandler OnAttackAction;
+        public event EventHandler OnAttackReleaseAction;
         public event EventHandler OnInteractAction;
 
         public bool walkEnabled = true;
@@ -20,6 +21,7 @@ namespace Input
 
             _inputManager.Active.Interact.performed += OnInteractPerformed;
             _inputManager.Active.Attack.performed += OnAttackPerformed;
+            _inputManager.Active.Attack.canceled += OnAttackReleased;
 
             walkEnabled = true;
         }
@@ -34,6 +36,11 @@ namespace Input
         private void OnAttackPerformed(InputAction.CallbackContext context)
         {
             OnAttackAction?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void OnAttackReleased(InputAction.CallbackContext context)
+        {
+            OnAttackReleaseAction?.Invoke(this, EventArgs.Empty);
         }
 
         private void OnInteractPerformed(InputAction.CallbackContext context)
