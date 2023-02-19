@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> badGuys = new List<GameObject>();
+    [SerializeField] private List<GameObject> waveBadGuys = new List<GameObject>();
     [SerializeField] private GameObject badGuyPrefab;
     [SerializeField] private GameObject bossPrefab;
 
@@ -16,6 +16,7 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         StartCoroutine(WaveCountdown());
+        StartCoroutine(RegularSummon());
     }
 
     // Update is called once per frame
@@ -52,12 +53,22 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
+    private IEnumerator RegularSummon()
+    {
+        yield return new WaitForSeconds(1.0f);
+        if (waveCount < 3)
+        {
+            SummonBadGuy();
+            StartCoroutine(RegularSummon());
+        }
+    }
+
     //Summons the Bad Guy at a random location
     private void SummonBadGuy()
     {
         GameObject instance = Instantiate(badGuyPrefab);
         instance.transform.position = GetRandomPosition();
-        badGuys.Add(instance);        
+        waveBadGuys.Add(instance);        
     }
 
     //Summons the big bad guy
@@ -65,13 +76,13 @@ public class EnemySpawner : MonoBehaviour
     {
         GameObject instance = Instantiate(bossPrefab);
         instance.transform.position = GetRandomPosition();
-        badGuys.Add(instance);
+        waveBadGuys.Add(instance);
     }
 
     //Removes a bad guy from the list and destroys it
     public void RemoveBadGuy(GameObject badGuy)
     {
-        badGuys.Remove(badGuy);
+        waveBadGuys.Remove(badGuy);
         Destroy(badGuy);
     }
 
@@ -113,7 +124,7 @@ public class EnemySpawner : MonoBehaviour
 
     public bool GetWinConditionB()
     {
-        if(badGuys.Count != 0)
+        if(waveBadGuys.Count != 0)
         {
             return false;
         }
@@ -133,6 +144,6 @@ public class EnemySpawner : MonoBehaviour
 
     public List<GameObject> GetBadGuys()
     {
-        return badGuys;
+        return waveBadGuys;
     }
 }
