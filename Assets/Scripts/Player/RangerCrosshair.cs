@@ -10,6 +10,8 @@ public class RangerCrosshair : MonoBehaviour
     [SerializeField] private float cursorSpeed;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private Transform playerTransform;
+    [SerializeField] private Transform visual;
+    public float amplitude;
 
     void Update()
     {
@@ -38,5 +40,12 @@ public class RangerCrosshair : MonoBehaviour
             
             transform.localScale = new Vector3(scaleXY, scaleXY, scaleZ);
         }
+
+        if (amplitude >= 1.5f)
+            visual.transform.Rotate(Vector3.forward * (600.0f * Time.deltaTime));
+        else
+            visual.transform.localRotation = Quaternion.Euler(Vector3.zero);
+            
+        
     }
 }

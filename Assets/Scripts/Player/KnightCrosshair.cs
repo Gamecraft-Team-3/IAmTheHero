@@ -11,7 +11,8 @@ public class KnightCrosshair : MonoBehaviour
     [SerializeField] private float cursorSpeed;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private Transform playerTransform;
-    [SerializeField] private PlayerCombat playerCombat;   
+    [SerializeField] private PlayerCombat playerCombat;
+    public float amplitude;
 
     void Update()
     {
@@ -41,6 +42,17 @@ public class KnightCrosshair : MonoBehaviour
 
             playerCombat.swingPosition = transform.position;
             playerCombat.swingRotation = transform.rotation;
+        }
+        
+        if (amplitude >= 2.0f)
+        {
+            transform.localScale =
+                Vector3.Lerp(transform.localScale, new Vector3(2f, 2f, 2f), 12f * Time.deltaTime);
+        }
+        else
+        {
+            transform.localScale =
+                Vector3.Lerp(transform.localScale, new Vector3(1f, 1f, 1f), 12f * Time.deltaTime);
         }
     }
 }

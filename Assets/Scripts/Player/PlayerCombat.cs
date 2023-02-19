@@ -15,7 +15,10 @@ namespace DefaultNamespace
         [SerializeField] private Camera mainCamera;
         [SerializeField] private LayerMask groundMask;
         [SerializeField] private CameraController cameraController;
-        [SerializeField] private AudioSource knightSwing, mageFire, mageExplode, arrowShoot; 
+        [SerializeField] private AudioSource knightSwing, mageFire, mageExplode, arrowShoot;
+        [SerializeField] private KnightCrosshair knightCrosshair;
+        [SerializeField] private MageCrosshair mageCrosshair;
+        [SerializeField] private RangerCrosshair rangerCrosshair;
 
         [Header("Cooldowns")]
         [SerializeField] private bool doTimer;
@@ -46,6 +49,10 @@ namespace DefaultNamespace
         {
             cooldownTimer += Time.deltaTime;
             heavyTimer += doTimer ? Time.deltaTime : 0.0f;
+
+            mageCrosshair.amplitude = heavyTimer;
+            rangerCrosshair.amplitude = heavyTimer;
+            knightCrosshair.amplitude = heavyTimer;
         }
 
         private void Attack(object sender, EventArgs e)
@@ -88,12 +95,10 @@ namespace DefaultNamespace
                 yield break;
             
             Vector3 position = GetMouseRay();
-            Instantiate(heavyTimer >= mageHeavyTime ? heavyMageAttack : mageAttackPrefab, position, Quaternion.identity);
-            Instantiate(implode, position, Quaternion.identity);
+            GameObject attackInstance = Instantiate(heavyTimer >= mageHeavyTime ? heavyMageAttack : mageAttackPrefab, position, Quaternion.identity);
+            Instantiate(implode, attackInstance.transform);
             
             cooldownTimer = 0.0f;
-            
-            heavyTimer = 0.0f;
 
             mageFire.Play();
             
@@ -101,7 +106,12 @@ namespace DefaultNamespace
             
             cameraController.ShakeCamera(1.0f, 32.0f, 0.1f);
 
-            Instantiate(explode, position, Quaternion.identity);
+            GameObject explosionInstance = Instantiate(explode, attackInstance.transform);
+
+            if (heavyTimer >= mageHeavyTime)
+                explosionInstance.transform.localScale = new Vector3(2f, 2f, 2f);
+            
+            heavyTimer = 0.0f;
             
             mageExplode.Play();
         }
@@ -114,7 +124,7 @@ namespace DefaultNamespace
             GameObject arrow = Instantiate(heavyTimer >= rangerHeavyTimer ? arrowHeavy : arrowPrefab, new Vector3(transform.position.x, 2.0f, transform.position.z), Quaternion.identity);
             
             arrow.transform.LookAt(new Vector3(GetMouseRay().x, 2.0f, GetMouseRay().z));
-            
+
             cooldownTimer = 0.0f;
 
             heavyTimer = 0.0f;

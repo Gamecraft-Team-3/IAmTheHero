@@ -156,7 +156,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3895fd521ed499c4c8a0e28299716cbb, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.21
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -658,6 +658,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   playerTransform: {fileID: 7627073290657741309}
+  visual: {fileID: 0}
+  amplitude: 0
 --- !u!1 &7627073289811995701
 GameObject:
   m_ObjectHideFlags: 0
@@ -789,6 +791,8 @@ MonoBehaviour:
   mini2: {fileID: 7627073289811995700}
   activeBody: {fileID: 7627073290657741309}
   mainCamera: {fileID: 2945479154829268031}
+  dustEffect: {fileID: 5038526634465211406, guid: 36e176bf40ebcc944b61a80254b8d430,
+    type: 3}
   playerSpeed: 3
   playerMoveDamp: 12
   miniPosMagnitude: 0.5
@@ -865,6 +869,9 @@ MonoBehaviour:
   mageFire: {fileID: 271121342432399258}
   mageExplode: {fileID: 1698904596144844587}
   arrowShoot: {fileID: 4065364391876310338}
+  knightCrosshair: {fileID: 7627073290139708435}
+  mageCrosshair: {fileID: 7627073290359018089}
+  rangerCrosshair: {fileID: 7627073289785461375}
   doTimer: 0
   knightCooldown: 1
   mageCooldown: 1.45
@@ -873,7 +880,7 @@ MonoBehaviour:
   heavyTimer: 0
   knightHeavyTime: 2
   mageHeavyTime: 3
-  rangerHeavyTimer: 1.5
+  rangerHeavyTimer: 1.175
   mageAttackPrefab: {fileID: 8169415497158257841, guid: 7e6ecbf952be04d47bf482fc95675bd5,
     type: 3}
   heavyMageAttack: {fileID: 8169415497158257841, guid: eddad807471e23d4b95a00f806b91987,
@@ -1520,6 +1527,7 @@ MonoBehaviour:
     m_Bits: 8
   playerTransform: {fileID: 7627073289855897368}
   playerCombat: {fileID: 2273556054948612203}
+  amplitude: 0
 --- !u!1 &7627073290359018071
 GameObject:
   m_ObjectHideFlags: 0
@@ -1572,6 +1580,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 8
+  amplitude: 0
 --- !u!1 &7627073290449278032
 GameObject:
   m_ObjectHideFlags: 0

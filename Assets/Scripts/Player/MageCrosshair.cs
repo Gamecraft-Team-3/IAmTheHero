@@ -9,6 +9,7 @@ public class MageCrosshair : MonoBehaviour
     [SerializeField] private Camera mainCamera;
     [SerializeField] private float rotationSpeed, cursorSpeed;
     [SerializeField] private LayerMask groundMask;
+    public float amplitude;
 
     void Update()
     {
@@ -23,6 +24,13 @@ public class MageCrosshair : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position,mousePos + new Vector3(0.0f, 0.325f, 0.0f), cursorSpeed * Time.deltaTime);
         }
         
-        transform.Rotate(new Vector3(0.0f, rotationSpeed * Time.deltaTime, 0.0f));
+        float amplitudeRotation = Mathf.Clamp(amplitude * 6, 1.0f, 6.0f);
+
+        transform.Rotate(new Vector3(0.0f, rotationSpeed * amplitudeRotation * Time.deltaTime, 0.0f));
+
+
+        float amplitudeScale = Mathf.Clamp(amplitude, 1.25f, 2.25f);
+        transform.localScale =
+            Vector3.Lerp(transform.localScale, new Vector3(amplitudeScale, amplitudeScale + 0.25f, amplitudeScale), 12f * Time.deltaTime);
     }
 }

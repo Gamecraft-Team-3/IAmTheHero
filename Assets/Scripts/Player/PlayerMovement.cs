@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody rb;
     [SerializeField] private Transform mini1, mini2, activeBody;
     [SerializeField] private Camera mainCamera;
+    [SerializeField] private GameObject dustEffect;
     
     [Header("Fields")] 
     [SerializeField] private float playerSpeed;
@@ -38,7 +39,11 @@ public class PlayerMovement : MonoBehaviour
         mainCamera.transform.parent = null;
     }
 
-
+    private void Start()
+    {
+        StartCoroutine(DustStep());
+    }
+    
     private void Update()
     {
         playerMoveIn = new Vector3(playerInput.GetMovementVector().x, 0.0f, playerInput.GetMovementVector().y);
@@ -65,7 +70,8 @@ public class PlayerMovement : MonoBehaviour
             
             miniPos2 = Vector3.Lerp(miniPos2, miniPos, Time.deltaTime * 2.5f);
             
-            activeBody.localPosition = new Vector3(0, 1.0f + (Mathf.Sin(Time.time * bobbleSpeed) * bobbleMagnitude), 0);
+            float sine = (Mathf.Sin(Time.time * bobbleSpeed) * bobbleMagnitude);
+            activeBody.localPosition = new Vector3(0, 1.0f + sine, 0);
             
             //activeBody.LookAt(transform.position + new Vector3(playerMoveVector.x, activeBody.position.y, playerMoveVector.z));
         }
@@ -85,5 +91,18 @@ public class PlayerMovement : MonoBehaviour
         
         mini1.position = miniPos1;
         mini2.position = miniPos2;
+    }
+
+    private IEnumerator DustStep()
+    {
+        while (true)
+        {
+            if (playerState == PlayerState.Moving)
+            {
+                Instantiate(dustEffect, activeBody.transform.position + Vector3.down + (activeBody.transform.forward * 0.5f), Quaternion.identity);
+            }
+
+            yield return new WaitForSeconds(0.2f);
+        }
     }
 }

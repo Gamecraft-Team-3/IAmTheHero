@@ -49,7 +49,7 @@ MonoBehaviour:
   eList: []
   damage: 50
   swingSpeed: -900
-  swingRadius: 7.5
+  swingRadius: 6.5
   swingTime: 0.285
 --- !u!1001 &4618914359257970610
 PrefabInstance:
@@ -66,17 +66,17 @@ PrefabInstance:
     - target: {fileID: 3837554247979972899, guid: b299b5a170e8a7f4f85f2bca7b15978c,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3837554247979972899, guid: b299b5a170e8a7f4f85f2bca7b15978c,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3837554247979972899, guid: b299b5a170e8a7f4f85f2bca7b15978c,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3837554247979972899, guid: b299b5a170e8a7f4f85f2bca7b15978c,
         type: 3}
