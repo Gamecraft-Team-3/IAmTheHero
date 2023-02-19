@@ -1056,7 +1056,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bloodSpalter: {fileID: 600543238996814707}
   speed: 3
-  health: 3
+  health: 50
+  isBoss: 0
 --- !u!114 &1088205094789499294
 MonoBehaviour:
   m_ObjectHideFlags: 0

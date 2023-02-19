@@ -89,7 +89,7 @@ public class EnemySpawner : MonoBehaviour
     //Returns a random Vector3 for a position
     private Vector3 GetRandomPosition()
     {
-        float xPos = Random.Range(10, 12);
+        float xPos = Random.Range(16, 20);
         float yPos = 0.6f;
         float zPos = Random.Range(-5, 5);
 
