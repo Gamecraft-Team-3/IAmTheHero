@@ -81,6 +81,13 @@ public class EnemyBehavior : MonoBehaviour
         winScream.Play();
         enemySpawner.RemoveBadGuy(this.gameObject);
         endGame.HurtPlayer();
+        if (isBoss)
+        {
+            for(int i = 0; i < 6; i++)
+            {
+                endGame.HurtPlayer();
+            }
+        }
     }
 
     //This function will remove this enemy when called
