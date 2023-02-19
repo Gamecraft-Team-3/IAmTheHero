@@ -1014,6 +1014,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8075336113890937002}
   - component: {fileID: -6853388305000657}
+  - component: {fileID: 1088205094789499294}
   m_Layer: 0
   m_Name: BadGuy
   m_TagString: Untagged
@@ -1056,6 +1057,20 @@ MonoBehaviour:
   bloodSpalter: {fileID: 600543238996814707}
   speed: 3
   health: 3
+--- !u!114 &1088205094789499294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8888570495023845904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f77617b1e13c6c408390e6533336b8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wobbleSpeed: 10
+  wobbleMagnitude: 10
 --- !u!1001 &53036642098137318
 PrefabInstance:
   m_ObjectHideFlags: 0
