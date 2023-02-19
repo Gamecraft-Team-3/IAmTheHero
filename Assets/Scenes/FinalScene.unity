@@ -357,6 +357,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &362557006 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7627073289855897375, guid: 1cd2e6a7fbdc9af479838747c7701bab,
+    type: 3}
+  m_PrefabInstance: {fileID: 1538722269}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c02954b90d1a124994e1d3490267d41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &627564322
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,6 +556,7 @@ GameObject:
   - component: {fileID: 1358238548}
   - component: {fileID: 1358238550}
   - component: {fileID: 1358238549}
+  - component: {fileID: 1358238551}
   m_Layer: 5
   m_Name: TIMER MOVE
   m_TagString: Untagged
@@ -592,10 +605,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: abfc53205d08ba74eb410630b1c23ec4, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -609,6 +622,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1358238547}
   m_CullTransparentMesh: 1
+--- !u!114 &1358238551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358238547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ca7fa2482e0e404f85e0c243eab3720, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerManager: {fileID: 362557006}
+  thisImage: {fileID: 1358238549}
 --- !u!1001 &1538722269
 PrefabInstance:
   m_ObjectHideFlags: 0
