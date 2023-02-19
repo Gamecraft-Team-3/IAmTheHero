@@ -13,11 +13,6 @@ public class MageAttack : MonoBehaviour
 
     private void Start()
     {
-        Invoke(nameof(DelayedAttack), 1.0f);
-    }
-
-    private void DelayedAttack()
-    {
         EnemySpawner enemySpawner = FindObjectOfType<EnemySpawner>();
         
         if (enemySpawner == null)
@@ -30,10 +25,17 @@ public class MageAttack : MonoBehaviour
             eList.Add(obj.GetComponent<EnemyBehavior>());
         
         foreach (var enemy in eList.ToArray())
-        {
             if (Vector3.Distance(transform.position, enemy.transform.position) <= innerRadius)
                 enemy.DamageEnemy(directDamage);
-            else if (Vector3.Distance(transform.position, enemy.transform.position) <= outerRadius)
+        
+        Invoke(nameof(DelayedAttack), 1.0f);
+    }
+    
+    private void DelayedAttack()
+    {
+        foreach (var enemy in eList.ToArray())
+        {
+            if (Vector3.Distance(transform.position, enemy.transform.position) <= outerRadius)
                 enemy.DamageEnemy(aoeDamage);
         }
     }

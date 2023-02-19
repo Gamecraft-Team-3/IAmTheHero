@@ -10,7 +10,7 @@ public class EnemyBehavior : MonoBehaviour
     private float distanceX;
     private float distanceY;
     [SerializeField] private ParticleSystem bloodSpalter;
-    [SerializeField] private float speed = 3;
+    [SerializeField] private float speed = 3, maxSpeed, knockbackSpeed, knockbackTime;
     [SerializeField] private int health = 3;
     [SerializeField] private bool isBoss = false;
 
@@ -28,8 +28,9 @@ public class EnemyBehavior : MonoBehaviour
         goal.z += 1;
         goal.z *= Random.Range(-5, 5);
         //SPEED
-        speed *= Random.Range(0.9f, 1.2f);
-
+        maxSpeed *= Random.Range(0.6f, 0.75f);
+        speed = maxSpeed;
+        
         //Initialize Audio Sources
         winScream = GameObject.Find("EnemyWinScream").GetComponent<AudioSource>();
         dieScream = GameObject.Find("EnemyDieScream").GetComponent<AudioSource>();
@@ -60,6 +61,10 @@ public class EnemyBehavior : MonoBehaviour
     {
         health -= damage;
         DamageEffect();
+
+        speed = knockbackSpeed;
+        Invoke(nameof(ResetSpeed), knockbackTime);
+        
         if(health <= 0)
         {
             BadGuyDies();
@@ -94,5 +99,10 @@ public class EnemyBehavior : MonoBehaviour
     private void BadGuyDies()
     {
         enemySpawner.RemoveBadGuy(this.gameObject);
+    }
+
+    private void ResetSpeed()
+    {
+        speed = maxSpeed;
     }
 }

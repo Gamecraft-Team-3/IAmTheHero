@@ -39,7 +39,7 @@ public class EnemySpawner : MonoBehaviour
 
         for(int i = 0; i < enemyCount; i++)
         {
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.15f);
             SummonBadGuy();
         }
         if (isFinalWave)
@@ -55,7 +55,7 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator RegularSummon()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(1.35f);
         if (waveCount < 3)
         {
             SummonBadGuy();
@@ -103,11 +103,11 @@ public class EnemySpawner : MonoBehaviour
         waveCount++;
         if(waveCount == 1)
         {
-            enemyCount = 7;
+            enemyCount = 8;
         }
         else if(waveCount == 2)
         {
-            enemyCount = 18;
+            enemyCount = 12;
         }
         else if(waveCount == 3)
         {
