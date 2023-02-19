@@ -6,6 +6,8 @@ public class Boss : MonoBehaviour
 {
     private EnemySpawner enemySpawner;
     private int damageDone = 0;
+    private float positionX;
+    private float positionY;
     private float positionZ;
     // Start is called before the first frame update
     void Start()
@@ -17,6 +19,8 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        positionX = this.transform.position.x;
+        positionY = this.transform.position.y;
         positionZ = this.transform.position.z;
     }
 
@@ -25,7 +29,7 @@ public class Boss : MonoBehaviour
         damageDone += damage;
         if(damageDone >= 100)
         {
-            this.transform.position = new Vector3(0, 0, positionZ - 5) ;
+            this.transform.position = new Vector3(positionX + 5, positionY, positionZ) ;
             damageDone = 0;
         }
     }
