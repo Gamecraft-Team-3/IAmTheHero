@@ -52,7 +52,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bloodSpalter: {fileID: 8537048837329770606}
   speed: 1.5
-  health: 50
+  health: 500
+  isBoss: 1
 --- !u!114 &8967608933410332337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -690,14 +691,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5452409504263536691}
-  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -1.0999999, y: 0, z: 0}
   m_LocalScale: {x: -10.000002, y: -10.000002, z: -200.00005}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1026087488118291383}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!33 &6975382667461833388
 MeshFilter:
   m_ObjectHideFlags: 0

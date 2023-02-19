@@ -12,6 +12,7 @@ public class EnemyBehavior : MonoBehaviour
     [SerializeField] private ParticleSystem bloodSpalter;
     [SerializeField] private float speed = 3;
     [SerializeField] private int health = 3;
+    [SerializeField] private bool isBoss = false;
 
     private AudioSource winScream;
     private AudioSource dieScream;
@@ -62,6 +63,10 @@ public class EnemyBehavior : MonoBehaviour
         if(health <= 0)
         {
             BadGuyDies();
+        }
+        if (isBoss)
+        {
+            this.gameObject.GetComponent<Boss>().KnockBack(damage);
         }
     }
 
