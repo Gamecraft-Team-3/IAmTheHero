@@ -8,7 +8,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private GameObject badGuyPrefab;
     [SerializeField] private GameObject bossPrefab;
 
-    private int waveCount = 0;
+    private int waveCount = 2;
     private int enemyCount = 0;
     private bool isFinalWave = false;
     private bool isDoneWithGame = false;
