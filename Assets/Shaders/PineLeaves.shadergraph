@@ -5,7 +5,11 @@
     "m_Properties": [],
     "m_Keywords": [],
     "m_Dropdowns": [],
-    "m_CategoryData": [],
+    "m_CategoryData": [
+        {
+            "m_Id": "84bbe9170a604b87abb84f5d8d603827"
+        }
+    ],
     "m_Nodes": [
         {
             "m_Id": "8872852600b64b9b9d7e7f8f6ed5f2a4"
@@ -111,7 +115,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Smoothness",
     "m_StageCapability": 2,
-    "m_Value": 0.5,
+    "m_Value": 0.10000000149011612,
     "m_DefaultValue": 0.5,
     "m_Labels": []
 }
@@ -311,6 +315,14 @@
         "m_SerializableColors": []
     },
     "m_SerializedDescriptor": "SurfaceDescription.NormalTS"
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.CategoryData",
+    "m_ObjectId": "84bbe9170a604b87abb84f5d8d603827",
+    "m_Name": "",
+    "m_ChildObjectList": []
 }
 
 {
@@ -609,9 +621,9 @@
     "m_ShaderOutputName": "BaseColor",
     "m_StageCapability": 2,
     "m_Value": {
-        "x": 0.5,
-        "y": 0.5,
-        "z": 0.5
+        "x": 0.01090246345847845,
+        "y": 0.33018869161605837,
+        "z": 0.035781919956207278
     },
     "m_DefaultValue": {
         "x": 0.0,

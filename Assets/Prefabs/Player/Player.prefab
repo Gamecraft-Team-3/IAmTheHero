@@ -756,6 +756,10 @@ MonoBehaviour:
   rCross: {fileID: 4121042727385618229}
   kCross: {fileID: 7981826315081523076}
   crosshairs: {fileID: 7627073288885350525}
+  minDelay: 7
+  maxDelay: 12
+  currentDelay: 0
+  delayTimer: 0
   heroType: 0
 --- !u!114 &2273556054948612203
 MonoBehaviour:
@@ -938,7 +942,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   playerTransform: {fileID: 7627073289855897368}
-  playerCombat: {fileID: 0}
+  playerCombat: {fileID: 2273556054948612203}
 --- !u!1 &7627073290359018071
 GameObject:
   m_ObjectHideFlags: 0

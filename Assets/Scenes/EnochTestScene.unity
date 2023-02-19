@@ -220,7 +220,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 66744f9211c156141b48de731122af50, type: 2}
+  - {fileID: 2100000, guid: 5d8067e6511843c44857e7062200b18f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -259,7 +259,7 @@ Transform:
   m_GameObject: {fileID: 270623144}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 1, z: 1.5}
+  m_LocalScale: {x: 4, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -424,6 +424,7 @@ MonoBehaviour:
   badGuys: []
   badGuyPrefab: {fileID: 8888570495023845904, guid: 5f25ba22f8010cc4091f971baff26098,
     type: 3}
+  bossPrefab: {fileID: 0}
 --- !u!4 &1273551919
 Transform:
   m_ObjectHideFlags: 0
@@ -541,6 +542,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627073289855897369, guid: 1cd2e6a7fbdc9af479838747c7701bab,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7627073290139708435, guid: 1cd2e6a7fbdc9af479838747c7701bab,
         type: 3}

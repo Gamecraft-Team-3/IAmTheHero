@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Input;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class PlayerManager : MonoBehaviour
 
     [SerializeField] private GameObject mCross, rCross, kCross;
     [SerializeField] private GameObject crosshairs;
+
+    [SerializeField] private float minDelay, maxDelay;
+    [SerializeField] private float currentDelay, delayTimer;
 
     public enum HeroType
     {
@@ -33,10 +37,23 @@ public class PlayerManager : MonoBehaviour
         crosshairs.transform.parent = null;
 
         playerInput.OnInteractAction += InvokeSwitchCharacter;
+
+        currentDelay = maxDelay;
+    }
+
+    private void Update()
+    {
+        delayTimer += Time.deltaTime;
+
+        if (delayTimer >= currentDelay)
+            InvokeSwitchCharacter(null, EventArgs.Empty);
     }
 
     private void InvokeSwitchCharacter(object o, EventArgs e)
     {
+        delayTimer = 0.0f;
+        currentDelay = Random.Range(minDelay, maxDelay);
+        
         Invoke(nameof(SwitchCharacter), 0.3f);
         
         dustCloud.Play();

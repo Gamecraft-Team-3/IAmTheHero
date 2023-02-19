@@ -10,8 +10,13 @@ public class MageAttack : MonoBehaviour
     [SerializeField] private int directDamage, aoeDamage;
 
     [SerializeField] private List<EnemyBehavior> eList;
-    
+
     private void Start()
+    {
+        Invoke(nameof(DelayedAttack), 2.15f);
+    }
+
+    private void DelayedAttack()
     {
         EnemySpawner enemySpawner = FindObjectOfType<EnemySpawner>();
         
