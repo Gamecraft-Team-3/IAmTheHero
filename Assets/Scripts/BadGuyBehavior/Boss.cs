@@ -9,11 +9,16 @@ public class Boss : MonoBehaviour
     private float positionX;
     private float positionY;
     private float positionZ;
+
+    [SerializeField] private AudioSource helicopterSound;
+    
     // Start is called before the first frame update
     void Start()
     {
         enemySpawner = GameObject.Find("Enemy Manager").GetComponent<EnemySpawner>();
         enemySpawner.MakeGameDone();
+
+        helicopterSound.Play();
     }
 
     // Update is called once per frame

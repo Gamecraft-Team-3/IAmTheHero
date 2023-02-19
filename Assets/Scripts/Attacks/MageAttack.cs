@@ -13,6 +13,8 @@ public class MageAttack : MonoBehaviour
 
     private void Start()
     {
+        Destroy(gameObject, 7.0f);
+        
         EnemySpawner enemySpawner = FindObjectOfType<EnemySpawner>();
         
         if (enemySpawner == null)

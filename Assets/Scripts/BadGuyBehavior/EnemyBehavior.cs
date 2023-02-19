@@ -10,7 +10,7 @@ public class EnemyBehavior : MonoBehaviour
     private float distanceX;
     private float distanceY;
     [SerializeField] private ParticleSystem bloodSpalter;
-    [SerializeField] private float speed = 3, maxSpeed, knockbackSpeed, knockbackTime;
+    [SerializeField] private float speed = 3, minSpeed, maxSpeedRange, maxSpeed, knockbackSpeed, knockbackTime;
     [SerializeField] private int health = 3;
     [SerializeField] private bool isBoss = false;
 
@@ -28,9 +28,8 @@ public class EnemyBehavior : MonoBehaviour
         goal.z += 1;
         goal.z *= Random.Range(-5, 5);
         //SPEED
-        maxSpeed *= Random.Range(0.6f, 0.75f);
+        maxSpeed *= Random.Range(minSpeed, maxSpeedRange);
         speed = maxSpeed;
-        
     }
 
     // Update is called once per frame

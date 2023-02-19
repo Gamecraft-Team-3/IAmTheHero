@@ -46,6 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   innerRadius: 4
   outerRadius: 6
-  directDamage: 45
+  directDamage: 30
   aoeDamage: 25
   eList: []

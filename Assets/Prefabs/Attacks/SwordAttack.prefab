@@ -47,9 +47,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySpawner: {fileID: 0}
   eList: []
-  damage: 25
+  damage: 30
   swingSpeed: -900
-  swingRadius: 5.5
+  swingRadius: 4
   swingTime: 0.285
 --- !u!1001 &4618914359257970610
 PrefabInstance:

@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49c60e14fdd5f3545a3dd1f6f22d6708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  innerRadius: 6
-  outerRadius: 8
-  directDamage: 50
+  innerRadius: 5
+  outerRadius: 7
+  directDamage: 45
   aoeDamage: 35
   eList: []

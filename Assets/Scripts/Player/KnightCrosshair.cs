@@ -44,7 +44,7 @@ public class KnightCrosshair : MonoBehaviour
             playerCombat.swingRotation = transform.rotation;
         }
         
-        if (amplitude >= 2.0f)
+        if (amplitude >= 1.15f)
         {
             transform.localScale =
                 Vector3.Lerp(transform.localScale, new Vector3(2f, 2f, 2f), 12f * Time.deltaTime);

@@ -586,7 +586,7 @@ SkinnedMeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: -8429602205177196161, guid: 76f5b4f03e19d5641a71089d8fdf5532, type: 3}
-  - {fileID: 2532717192154860216, guid: 76f5b4f03e19d5641a71089d8fdf5532, type: 3}
+  - {fileID: 2100000, guid: 200811d0418e9314287687298eff5824, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1015,9 +1015,9 @@ GameObject:
   - component: {fileID: 8075336113890937002}
   - component: {fileID: -6853388305000657}
   - component: {fileID: 1088205094789499294}
-  - component: {fileID: 2383436311011646835}
+  - component: {fileID: 1867270685816481169}
   m_Layer: 0
-  m_Name: BadGuy
+  m_Name: TinyGuy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1031,8 +1031,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8888570495023845904}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.686, z: 0}
-  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
+  m_LocalPosition: {x: 0, y: 0.4, z: 0.0036381}
+  m_LocalScale: {x: 0.4, y: 0.25, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2175896486462329072}
@@ -1057,12 +1057,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bloodSpalter: {fileID: 600543238996814707}
   speed: 3
-  minSpeed: 0.65
-  maxSpeedRange: 0.85
+  minSpeed: 1.35
+  maxSpeedRange: 1.75
   maxSpeed: 3
-  knockbackSpeed: -14
-  knockbackTime: 0.1
-  health: 50
+  knockbackSpeed: -14.5
+  knockbackTime: 0.15
+  health: 65
   isBoss: 0
   winScream: {fileID: 4052625339986914105, guid: 32dfc5d53c03d9849a2e5b9a678c5d55,
     type: 3}
@@ -1080,11 +1080,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f77617b1e13c6c408390e6533336b8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wobbleSpeed: 10
+  wobbleSpeed: 20
   wobbleMagnitude: 10
-  step: {fileID: 2383436311011646835}
-  repeat: 1
---- !u!82 &2383436311011646835
+  step: {fileID: 1867270685816481169}
+  repeat: 0
+--- !u!82 &1867270685816481169
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1094,9 +1094,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1f41a2b7e5386184093e34223aa0677f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: cc239cb8815d5404588290743c563a72, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.1
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0

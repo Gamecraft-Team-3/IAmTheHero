@@ -97,11 +97,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffce68c72d5742938c218d4f05f5b083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 25
+  damage: 30
   arrowSpeed: 35
   eList: []
   enemySpawner: {fileID: 0}
-  radius: 3.75
+  radius: 3.5
 --- !u!1001 &5612900619888373321
 PrefabInstance:
   m_ObjectHideFlags: 0

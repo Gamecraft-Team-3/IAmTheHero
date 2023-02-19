@@ -1,11 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private List<GameObject> waveBadGuys = new List<GameObject>();
-    [SerializeField] private GameObject badGuyPrefab;
+    [SerializeField] private GameObject badGuyPrefab, bigGuyPrefab, tinyGuyPrefab;
     [SerializeField] private GameObject bossPrefab;
 
     private int waveCount = 0;
@@ -36,7 +38,6 @@ public class EnemySpawner : MonoBehaviour
     //Summons a wave of enemies.  The amount is determined by another function
     private IEnumerator SummonWave()
     {
-
         for(int i = 0; i < enemyCount; i++)
         {
             yield return new WaitForSeconds(0.15f);
@@ -66,7 +67,19 @@ public class EnemySpawner : MonoBehaviour
     //Summons the Bad Guy at a random location
     private void SummonBadGuy()
     {
-        GameObject instance = Instantiate(badGuyPrefab);
+        int chance = Random.Range(0, 20);
+
+        GameObject selectedInstance;
+
+        if (chance > 2 && chance < 18)
+            selectedInstance = badGuyPrefab;
+        else if (chance <= 1)
+            selectedInstance = tinyGuyPrefab;
+        else
+            selectedInstance = bigGuyPrefab;
+        
+        GameObject instance = Instantiate(selectedInstance);
+        
         instance.transform.position = GetRandomPosition();
         waveBadGuys.Add(instance);        
     }
