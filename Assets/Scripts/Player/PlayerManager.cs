@@ -37,6 +37,13 @@ public class PlayerManager : MonoBehaviour
     {
         heroType = HeroType.Knight;
         kCross.SetActive(true);
+        
+        mage.SetActive(false);
+        ranger.SetActive(false);
+        
+        knightSmall.SetActive(false);
+        mageSmall.SetActive(true);
+        rangerSmall.SetActive(true);
 
         crosshairs.transform.parent = null;
 
@@ -79,12 +86,17 @@ public class PlayerManager : MonoBehaviour
             ranger.transform.parent = mini1;
             mage.transform.parent = active;
             
+            knightSmall.transform.parent = mini2;
+            rangerSmall.transform.parent = mini1;
+            mageSmall.transform.parent = active;
+            
             knight.SetActive(false);
             ranger.SetActive(false);
             mage.SetActive(true);
             
             knightSmall.SetActive(true);
             rangerSmall.SetActive(true);
+            mageSmall.SetActive(false);
             
             kCross.SetActive(false);
             mCross.SetActive(true);
@@ -101,7 +113,19 @@ public class PlayerManager : MonoBehaviour
             mage.transform.parent = mini2;
             knight.transform.parent = mini1;
             ranger.transform.parent = active;
-
+            
+            mageSmall.transform.parent = mini2;
+            knightSmall.transform.parent = mini1;
+            rangerSmall.transform.parent = active;
+            
+            knight.SetActive(false);
+            ranger.SetActive(true);
+            mage.SetActive(false);
+            
+            knightSmall.SetActive(true);
+            rangerSmall.SetActive(false);
+            mageSmall.SetActive(true);
+            
             mCross.SetActive(false);
             rCross.SetActive(true);
             
@@ -118,8 +142,20 @@ public class PlayerManager : MonoBehaviour
             mage.transform.parent = mini1;
             knight.transform.parent = active;
             
+            rangerSmall.transform.parent = mini2;
+            mageSmall.transform.parent = mini1;
+            knightSmall.transform.parent = active;
+            
             rCross.SetActive(false);
             kCross.SetActive(true);
+            
+            knight.SetActive(true);
+            ranger.SetActive(false);
+            mage.SetActive(false);
+            
+            knightSmall.SetActive(false);
+            rangerSmall.SetActive(true);
+            mageSmall.SetActive(true);
 
             heroType = HeroType.Knight;
             
@@ -143,11 +179,28 @@ public class PlayerManager : MonoBehaviour
         ranger.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
         ranger.transform.localRotation = Quaternion.Euler(Vector3.zero);
         
+        knightSmall.transform.localPosition = Vector3.zero;
+        knightSmall.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+        knightSmall.transform.localRotation = Quaternion.Euler(Vector3.zero);
+        
+        mageSmall.transform.localPosition = Vector3.zero;
+        mageSmall.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+        mageSmall.transform.localRotation = Quaternion.Euler(Vector3.zero);
+        
+        rangerSmall.transform.localPosition = Vector3.zero;
+        rangerSmall.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+        rangerSmall.transform.localRotation = Quaternion.Euler(Vector3.zero);
+        
         playerInput.SetInputState(true);
     }
 
     public HeroType GetHeroType()
     {
         return heroType;
+    }
+
+    public float GetTimeLeft()
+    {
+        return delayTimer / currentDelay;
     }
 }
