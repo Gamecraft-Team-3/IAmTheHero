@@ -15,6 +15,7 @@ namespace DefaultNamespace
         [SerializeField] private Camera mainCamera;
         [SerializeField] private LayerMask groundMask;
         [SerializeField] private CameraController cameraController;
+        [SerializeField] private AudioSource knightSwing, mageFire, mageExplode, arrowShoot; 
 
         [Header("Cooldowns")]
         [SerializeField] private bool doTimer;
@@ -77,6 +78,8 @@ namespace DefaultNamespace
             cooldownTimer = 0.0f;
 
             heavyTimer = 0.0f;
+
+            knightSwing.Play();
         }
 
         private IEnumerator MageAttack()
@@ -91,12 +94,16 @@ namespace DefaultNamespace
             cooldownTimer = 0.0f;
             
             heavyTimer = 0.0f;
+
+            mageFire.Play();
             
             yield return new WaitForSeconds(0.75f);
             
             cameraController.ShakeCamera(1.0f, 32.0f, 0.1f);
 
             Instantiate(explode, position, Quaternion.identity);
+            
+            mageExplode.Play();
         }
         
         private void RangerAttack()
@@ -111,6 +118,8 @@ namespace DefaultNamespace
             cooldownTimer = 0.0f;
 
             heavyTimer = 0.0f;
+
+            arrowShoot.Play();
         }
 
         private Vector3 GetMouseRay()

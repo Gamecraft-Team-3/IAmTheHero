@@ -22,6 +22,8 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private float minDelay, maxDelay;
     [SerializeField] private float currentDelay, delayTimer;
 
+    [SerializeField] private AudioSource music, scuffle;
+
     public enum HeroType
     {
         Knight,
@@ -41,6 +43,8 @@ public class PlayerManager : MonoBehaviour
         playerInput.OnInteractAction += InvokeSwitchCharacter;
 
         currentDelay = maxDelay;
+
+        music.Play();
     }
 
     private void Update()
@@ -57,6 +61,8 @@ public class PlayerManager : MonoBehaviour
         currentDelay = Random.Range(minDelay, maxDelay);
         
         cameraController.ShakeCamera(0.35f, 32.0f, 0.075f);
+
+        scuffle.Play();
         
         Invoke(nameof(SwitchCharacter), 0.3f);
         

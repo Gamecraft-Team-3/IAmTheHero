@@ -35,6 +35,9 @@ public class MageAttack : MonoBehaviour
     {
         foreach (var enemy in eList.ToArray())
         {
+            if (enemy == null)
+                continue;
+            
             if (Vector3.Distance(transform.position, enemy.transform.position) <= outerRadius)
                 enemy.DamageEnemy(aoeDamage);
         }
