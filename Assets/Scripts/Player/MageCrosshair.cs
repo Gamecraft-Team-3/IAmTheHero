@@ -28,7 +28,7 @@ public class MageCrosshair : MonoBehaviour
 
         transform.Rotate(new Vector3(0.0f, rotationSpeed * amplitudeRotation * Time.deltaTime, 0.0f));
 
-        float amplitudeScale = Mathf.Clamp(amplitude / 1.5f, 1.25f, 2.25f);
+        float amplitudeScale = Mathf.Clamp(amplitude, 1.25f, 2.25f);
         transform.localScale =
             Vector3.Lerp(transform.localScale, new Vector3(amplitudeScale, amplitudeScale + 0.25f, amplitudeScale), 24f * Time.deltaTime);
     }

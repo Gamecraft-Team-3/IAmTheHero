@@ -11,7 +11,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private PlayerInputManager playerInput;
     [SerializeField] private CameraController cameraController;
 
-    [SerializeField] private GameObject knight, mage, ranger;
+    [SerializeField] private GameObject knight, mage, ranger, knightSmall, mageSmall, rangerSmall;
     [SerializeField] private Transform active, mini1, mini2;
 
     [SerializeField] private ParticleSystem dustCloud;
