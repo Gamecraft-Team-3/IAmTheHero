@@ -13,7 +13,7 @@ public class MageAttack : MonoBehaviour
 
     private void Start()
     {
-        Invoke(nameof(DelayedAttack), 2.15f);
+        Invoke(nameof(DelayedAttack), 1.0f);
     }
 
     private void DelayedAttack()

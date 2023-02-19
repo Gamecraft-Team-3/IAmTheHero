@@ -943,7 +943,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInput: {fileID: 7627073289855897371}
   mainCamera: {fileID: 7627073288972880253}
-  rotationSpeed: 24
+  rotationSpeed: 32
   cursorSpeed: 18
   groundMask:
     serializedVersion: 2

@@ -76,7 +76,7 @@ namespace DefaultNamespace
             
             cooldownTimer = 0.0f;
             
-            yield return new WaitForSeconds(1.75f);
+            yield return new WaitForSeconds(0.75f);
             
             cameraController.ShakeCamera(1.0f, 32.0f, 0.1f);
 
