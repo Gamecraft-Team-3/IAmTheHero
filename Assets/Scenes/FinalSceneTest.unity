@@ -409,6 +409,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4902872496321612190, guid: 1cd2e6a7fbdc9af479838747c7701bab,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902872496321612190, guid: 1cd2e6a7fbdc9af479838747c7701bab,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902872496321612190, guid: 1cd2e6a7fbdc9af479838747c7701bab,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7145227228779515993, guid: 1cd2e6a7fbdc9af479838747c7701bab,
         type: 3}
       propertyPath: m_Volume
@@ -423,6 +438,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627073289412093536, guid: 1cd2e6a7fbdc9af479838747c7701bab,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 7627073289785461375, guid: 1cd2e6a7fbdc9af479838747c7701bab,
         type: 3}

@@ -62,22 +62,22 @@ public class PlayerMovement : MonoBehaviour
 
         if (playerState != PlayerState.Idle)
         {
-            Vector3 miniPos = transform.position + (playerMoveIn * -miniPosMagnitude) + new Vector3(0.0f, 0.6f, 0.0f);
+            Vector3 miniPos = transform.position + (playerMoveIn * -miniPosMagnitude) + new Vector3(0.0f, 0.35f, 0.0f);
             
             miniPos1 = Vector3.Lerp(miniPos1, miniPos, Time.deltaTime * 5.0f);
 
-            miniPos = transform.position + (playerMoveIn * (-miniPosMagnitude * 2.0f)) + new Vector3(0.0f, 0.6f, 0.0f);
+            miniPos = transform.position + (playerMoveIn * (-miniPosMagnitude * 2.0f)) + new Vector3(0.0f, 0.35f, 0.0f);
             
             miniPos2 = Vector3.Lerp(miniPos2, miniPos, Time.deltaTime * 2.5f);
             
             float sine = (Mathf.Sin(Time.time * bobbleSpeed) * bobbleMagnitude);
-            activeBody.localPosition = new Vector3(0, 1.0f + sine, 0);
+            activeBody.localPosition = new Vector3(0, 0.35f + sine, 0);
             
             //activeBody.LookAt(transform.position + new Vector3(playerMoveVector.x, activeBody.position.y, playerMoveVector.z));
         }
         
-        mini1.LookAt(new Vector3(activeBody.position.x, 0.6f, activeBody.position.z));
-        mini2.LookAt(new Vector3(mini1.position.x, 0.6f, mini1.position.z));
+        mini1.LookAt(new Vector3(activeBody.position.x, 0.35f, activeBody.position.z));
+        mini2.LookAt(new Vector3(mini1.position.x, 0.35f, mini1.position.z));
 
         if (Vector3.Distance(mousePos + new Vector3(0.0f, 1.0f, 0.0f), activeBody.transform.position) > 0.5f)
         {
@@ -99,7 +99,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (playerState == PlayerState.Moving)
             {
-                Instantiate(dustEffect, activeBody.transform.position + Vector3.down + (activeBody.transform.forward * 0.5f), Quaternion.identity);
+                Instantiate(dustEffect, activeBody.transform.position, Quaternion.identity);
             }
 
             yield return new WaitForSeconds(0.2f);
