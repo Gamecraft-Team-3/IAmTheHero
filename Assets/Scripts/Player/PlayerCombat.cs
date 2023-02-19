@@ -83,7 +83,6 @@ namespace DefaultNamespace
             Instantiate(explode, position, Quaternion.identity);
         }
         
-
         private void RangerAttack()
         {
             if (cooldownTimer < rangerCooldown)
