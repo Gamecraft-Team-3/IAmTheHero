@@ -573,7 +573,7 @@ MonoBehaviour:
   waveBadGuys: []
   badGuyPrefab: {fileID: 8888570495023845904, guid: 5f25ba22f8010cc4091f971baff26098,
     type: 3}
-  bossPrefab: {fileID: 393701642546127117, guid: 08ed091a9faf2304f97192f18de2e233,
+  bossPrefab: {fileID: 3215008756145719015, guid: 42c1be5570abc764ab0a425a7082d354,
     type: 3}
 --- !u!4 &1701483751
 Transform:
