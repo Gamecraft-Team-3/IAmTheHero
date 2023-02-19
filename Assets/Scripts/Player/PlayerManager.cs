@@ -79,6 +79,13 @@ public class PlayerManager : MonoBehaviour
             ranger.transform.parent = mini1;
             mage.transform.parent = active;
             
+            knight.SetActive(false);
+            ranger.SetActive(false);
+            mage.SetActive(true);
+            
+            knightSmall.SetActive(true);
+            rangerSmall.SetActive(true);
+            
             kCross.SetActive(false);
             mCross.SetActive(true);
 
