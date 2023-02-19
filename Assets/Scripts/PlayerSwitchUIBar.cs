@@ -16,6 +16,6 @@ public class PlayerSwitchUIBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //thisImage.fillAmount = playerManager.GetTimeRemaining();
+        thisImage.fillAmount = playerManager.GetTimeLeft();
     }
 }
