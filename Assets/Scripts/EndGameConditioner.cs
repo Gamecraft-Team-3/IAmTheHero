@@ -27,7 +27,7 @@ public class EndGameConditioner : MonoBehaviour
         playerHealth--;
         if(playerHealth < 0)
         {
-            SceneManager.LoadScene("GameOver");
+            SceneManager.LoadScene("MainMenu");
         }
     }
 
