@@ -52,8 +52,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bloodSpalter: {fileID: 8537048837329770606}
   speed: 1.5
+  maxSpeed: 1.5
+  knockbackSpeed: -1.5
+  knockbackTime: 0.1
   health: 500
   isBoss: 1
+  winScream: {fileID: 4052625339986914105, guid: 32dfc5d53c03d9849a2e5b9a678c5d55,
+    type: 3}
+  dieScream: {fileID: 5533572239895809070, guid: 79c025efefbcadc45a4067e98f653446,
+    type: 3}
 --- !u!114 &8967608933410332337
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -14,8 +14,8 @@ public class EnemyBehavior : MonoBehaviour
     [SerializeField] private int health = 3;
     [SerializeField] private bool isBoss = false;
 
-    private AudioSource winScream;
-    private AudioSource dieScream;
+    [SerializeField] private GameObject winScream;
+    [SerializeField] private GameObject dieScream;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,9 +31,6 @@ public class EnemyBehavior : MonoBehaviour
         maxSpeed *= Random.Range(0.6f, 0.75f);
         speed = maxSpeed;
         
-        //Initialize Audio Sources
-        winScream = GameObject.Find("EnemyWinScream").GetComponent<AudioSource>();
-        dieScream = GameObject.Find("EnemyDieScream").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -77,13 +74,13 @@ public class EnemyBehavior : MonoBehaviour
 
     private void DamageEffect()
     {
-        dieScream.Play();
+        Instantiate(dieScream);
         bloodSpalter.Play();
     }
     //This function will remove the this enemy and hurt the player
     private void ReachGoal()
     {
-        winScream.Play();
+        Instantiate(winScream);
         enemySpawner.RemoveBadGuy(this.gameObject);
         endGame.HurtPlayer();
         if (isBoss)
