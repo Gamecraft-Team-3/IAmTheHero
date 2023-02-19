@@ -28,8 +28,8 @@ public class EnemySpawner : MonoBehaviour
     //Waits a set amount of time before each wave.
     private IEnumerator WaveCountdown()
     {
-        DetermineEnemyCount();
         yield return new WaitForSeconds(5.0f);
+        DetermineEnemyCount();
         StartCoroutine(SummonWave());
     }
 

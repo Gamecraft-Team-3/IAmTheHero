@@ -5,6 +5,8 @@ using UnityEngine;
 public class Boss : MonoBehaviour
 {
     private EnemySpawner enemySpawner;
+    private int damageDone = 0;
+    private float positionZ;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +17,16 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        positionZ = this.transform.position.z;
+    }
+
+    public void KnockBack(int damage)
+    {
+        damageDone += damage;
+        if(damageDone >= 100)
+        {
+            this.transform.position = new Vector3(0, 0, positionZ - 5) ;
+            damageDone = 0;
+        }
     }
 }

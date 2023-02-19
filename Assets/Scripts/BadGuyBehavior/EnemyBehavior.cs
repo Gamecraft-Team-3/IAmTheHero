@@ -12,6 +12,7 @@ public class EnemyBehavior : MonoBehaviour
     [SerializeField] private ParticleSystem bloodSpalter;
     [SerializeField] private float speed = 3;
     [SerializeField] private int health = 3;
+    [SerializeField] private bool isBoss = false;
 
     private AudioSource winScream;
     private AudioSource dieScream;
@@ -63,6 +64,10 @@ public class EnemyBehavior : MonoBehaviour
         {
             BadGuyDies();
         }
+        if (isBoss)
+        {
+            this.gameObject.GetComponent<Boss>().KnockBack(damage);
+        }
     }
 
     private void DamageEffect()
@@ -76,6 +81,13 @@ public class EnemyBehavior : MonoBehaviour
         winScream.Play();
         enemySpawner.RemoveBadGuy(this.gameObject);
         endGame.HurtPlayer();
+        if (isBoss)
+        {
+            for(int i = 0; i < 6; i++)
+            {
+                endGame.HurtPlayer();
+            }
+        }
     }
 
     //This function will remove this enemy when called
