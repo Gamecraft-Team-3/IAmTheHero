@@ -201,6 +201,6 @@ public class PlayerManager : MonoBehaviour
 
     public float GetTimeLeft()
     {
-        return delayTimer / currentDelay;
+        return 1.0f - (delayTimer / currentDelay);
     }
 }
