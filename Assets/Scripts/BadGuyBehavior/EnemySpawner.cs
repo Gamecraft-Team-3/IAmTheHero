@@ -8,7 +8,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private GameObject badGuyPrefab;
     [SerializeField] private GameObject bossPrefab;
 
-    private int waveCount = 2;
+    private int waveCount = 0;
     private int enemyCount = 0;
     private bool isFinalWave = false;
     private bool isDoneWithGame = false;
@@ -28,7 +28,7 @@ public class EnemySpawner : MonoBehaviour
     //Waits a set amount of time before each wave.
     private IEnumerator WaveCountdown()
     {
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(60.0f);
         DetermineEnemyCount();
         StartCoroutine(SummonWave());
     }
