@@ -696,6 +696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInput: {fileID: 7627073289855897371}
+  cameraController: {fileID: 0}
   knight: {fileID: 7627073290593142780}
   mage: {fileID: 7627073289414109119}
   ranger: {fileID: 7627073289165470457}
@@ -730,8 +731,9 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 8
+  cameraController: {fileID: 0}
   knightCooldown: 1
-  mageCooldown: 2
+  mageCooldown: 1.45
   rangerCooldown: 0.5
   cooldownTimer: 0
   mageAttackPrefab: {fileID: 8169415497158257841, guid: 7e6ecbf952be04d47bf482fc95675bd5,
