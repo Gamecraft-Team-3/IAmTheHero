@@ -47,7 +47,7 @@ public class PlayerManager : MonoBehaviour
 
         crosshairs.transform.parent = null;
 
-        playerInput.OnInteractAction += InvokeSwitchCharacter;
+        //playerInput.OnInteractAction += InvokeSwitchCharacter;
 
         currentDelay = maxDelay;
 
