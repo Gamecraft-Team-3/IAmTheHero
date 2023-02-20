@@ -434,8 +434,8 @@ MonoBehaviour:
   minSpeed: 0.5
   maxSpeedRange: 0.5
   maxSpeed: 3
-  knockbackSpeed: 0
-  knockbackTime: 0
+  knockbackSpeed: -7
+  knockbackTime: 0.1
   health: 500
   isBoss: 1
   winScream: {fileID: 4052625339986914105, guid: 32dfc5d53c03d9849a2e5b9a678c5d55,

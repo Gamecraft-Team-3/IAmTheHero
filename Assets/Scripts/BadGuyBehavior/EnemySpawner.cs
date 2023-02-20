@@ -88,7 +88,10 @@ public class EnemySpawner : MonoBehaviour
     private void SummonBoss()
     {
         GameObject instance = Instantiate(bossPrefab);
-        instance.transform.position = GetRandomPosition() + new Vector3(0.0f, 0.0f, -2.5f);
+
+        Vector3 pos = GetRandomPosition();
+
+        instance.transform.position = new Vector3(pos.x, pos.y, -2.5f);
         waveBadGuys.Add(instance);
     }
 

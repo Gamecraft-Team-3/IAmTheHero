@@ -51,7 +51,9 @@ namespace DefaultNamespace
                 transform.position = basePosition + (((transform.up + transform.right) * sine));
             }
             else
-                transform.position = new Vector3(currentPosition.x, basePosition.y, currentPosition.z + basePosition.z);
+                transform.position = Vector3.Lerp(transform.position,
+                    new Vector3(currentPosition.x, basePosition.y, currentPosition.z + basePosition.z),
+                        16.0f * Time.deltaTime);
         }
 
         public void ShakeCamera(float time, float speed, float magnitude)

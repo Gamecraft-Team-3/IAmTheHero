@@ -34,7 +34,7 @@ public class Boss : MonoBehaviour
         damageDone += damage;
         if(damageDone >= 100)
         {
-            this.transform.position = new Vector3(positionX + 5, positionY, positionZ) ;
+            //this.transform.position = new Vector3(positionX + 5, positionY, positionZ) ;
             damageDone = 0;
         }
     }
